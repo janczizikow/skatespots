@@ -3,3 +3,18 @@ $primary: #ff5a5f;
 $body-color: #484848;
 $border-color: #ebebeb;
 $input-border-color: $border-color;
+
+.has-invalid {
+  .invalid-feedback {
+    display: block;
+  }
+
+  label {
+    color: theme-color("danger");
+  }
+
+  .form-control {
+    background: theme-color-level("danger", -10);
+    border-color: theme-color("danger");
+  }
+}
