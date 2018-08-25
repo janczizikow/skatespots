@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta http-equiv="Content-Type" content="text/html;charset=UTF-8"
+    meta http-equiv="X-UA-Compatible" content="ie=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Skatespots
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    /= stylesheet_pack_tag 'application', media: 'all' # Uncomment if you import CSS in app/javascript/packs/application.js
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'
+
+  body class="Site"
+    = render 'shared/nav'
+    / <p class="notice"><%= notice %></p>
+    / <p class="alert"><%= alert %></p>
+
+    main class="Site__content"
+      == yield
+
+    = render 'shared/footer'
+    / = javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}"
+    == yield :after_js
+

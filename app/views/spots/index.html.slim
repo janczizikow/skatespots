@@ -1,0 +1,9 @@
+.wrapper
+  .container-fluid
+    .Spots
+      .Spots__grid
+        .row
+          - @spots.each do |spot|
+            .col
+              = render 'shared/card', spot: spot
+      .Spots__map

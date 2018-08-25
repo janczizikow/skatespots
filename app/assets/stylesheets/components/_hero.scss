@@ -1,0 +1,30 @@
+.hero {
+  margin-top: -#{$navbar-height};
+  height: 100vh;
+  background: rgb(37, 28, 26);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 817px;
+    color: $white;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    text-shadow: 1px 1px 40px rgba(22, 23, 31, 0.4) !important;
+  }
+
+  &__lead {
+    opacity: 0.8;
+  }
+
+  &__form {
+    margin-top: 2rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 15px 46px rgba(26, 26, 29, 0.3), 0 15px 90px rgba(0, 0, 0, 0.2);
+  }
+}

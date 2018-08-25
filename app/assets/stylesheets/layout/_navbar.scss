@@ -1,0 +1,52 @@
+.Navbar {
+  border-bottom: 1px solid $border-color;
+}
+
+.bg-light {
+  background-color: $white !important;
+}
+
+.scrolled {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+}
+
+.navbar__logo {
+  color: $primary!important;
+  height: 39px;
+  margin-right: 32px;
+
+  &--white {
+    color: $white!important;
+  }
+}
+
+.navbar__logo:hover,
+.navbar__logo:focus {
+  color: $primary!important;
+}
+
+.navbar__toggle {
+  border-color: transparent!important;
+}
+
+.btn-search {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-left: 0;
+}
+
+.navbar__form {
+  display: none;
+
+  @include media(map-get($grid-breakpoints, md)) {
+    display: block;
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-add {
+    display: inline-block;
+    width: auto;
+  }
+}

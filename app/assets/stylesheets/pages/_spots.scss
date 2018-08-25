@@ -1,0 +1,16 @@
+.Spots {
+  display: flex;
+
+  &__grid {
+    flex: 1;
+  }
+
+  &__map {
+    display: none;
+
+    @include media(map-get($grid-breakpoints, lg)) {
+      display: block;
+      flex: 0 0 420px;
+    }
+  }
+}

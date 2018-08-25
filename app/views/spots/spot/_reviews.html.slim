@@ -1,0 +1,7 @@
+hr
+.d-flex.align-items-center
+  h4.mr-2.mb-0 #{reviews_count} Reviews
+  = render 'shared/stars', rating: rating
+hr
+- if user_signed_in?
+= render 'reviews/new', spot: spot, review: review

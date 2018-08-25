@@ -1,0 +1,10 @@
+.Site {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__content {
+    margin-top: $navbar-height;
+    flex: 1;
+  }
+}

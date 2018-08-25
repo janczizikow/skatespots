@@ -1,0 +1,6 @@
+.d-flex
+  - (1..5).to_a.each do |n|
+    - if n <= rating
+      i class="fas fa-star text-warning"
+    - else
+      i class="fas fa-star text-muted"

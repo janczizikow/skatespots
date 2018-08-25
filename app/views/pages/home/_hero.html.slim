@@ -1,0 +1,12 @@
+.hero
+  .hero__inner class="container"
+    h1.display-3 Ready to shred?
+    p.hero__lead.lead Discover new spots around you
+    = form_tag spots_path, method: :get, class: "hero__form" do
+      .input-group
+        = text_field_tag :query, \
+          nil,
+          placeholder: 'Try street spots in Berlin',
+          class: "form-control form-control-lg"
+        .input-group-append
+          = submit_tag nil, class: "btn btn-primary btn-lg"

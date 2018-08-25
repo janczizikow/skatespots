@@ -1,0 +1,34 @@
+header class= class_string("navbar navbar-expand-md fixed-top js-nav", ["navbar-dark", "Navbar navbar-light bg-light"] => home?)
+  = link_to root_path, class: class_string("navbar-brand d-flex align-items-center", ["navbar__logo--white", "navbar__logo"] => home?) do
+    = render "shared/logo"
+    / image_tag "logo.svg", alt: "Skatespots", class: "nav-logo"
+
+  button class="navbar-toggler navbar__toggle" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation"
+    span class="navbar-toggler-icon"
+
+  #navbarToggle.collapse.navbar-collapse
+    .navbar-nav.mr-auto
+      = form_tag spots_path, method: :get, class: class_string("navbar__form mt-2 mt-md-0", "d-none": home?) do
+        .input-group
+          = text_field_tag :query, nil, placeholder: "Search...", class: "form-control js-nav-search"
+          .input-group-append
+            = button_tag raw('<i class="fas fa-search"></i>'), class: "btn btn-outline-secondary btn-search"
+
+    ul.navbar-nav
+      - if user_signed_in?
+          li.nav-item
+            = link_to "Add a spot", new_spot_path, class: "nav-link"
+          li.nav-item
+            = link_to "Messages", "#", class: "nav-link"
+          li.nav-item
+            = link_to "Favorites", "#", class: "nav-link"
+          li.nav-item
+            = link_to destroy_user_session_path, method: :delete, class: "nav-link" do
+              = t(".sign_out", default: "Log out")
+      - else
+        li.nav-item
+            = link_to "Add a spot", new_spot_path, class: "nav-link"
+        li.nav-item
+          = link_to "Sign in", new_user_session_path, class: "nav-link"
+        li.nav-item
+          = link_to "Sign up", new_user_registration_path, class: "btn btn-outline-success btn-block btn-add my-2 my-md-0"

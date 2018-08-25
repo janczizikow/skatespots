@@ -1,0 +1,12 @@
+.Banner
+  .container
+.container
+  .row
+    .col-md-6.offset-md-1
+      = render "spots/spot/meta", spot: @spot, city: city
+      = render "spots/spot/reviews", spot: @spot, review: review
+    .col-md-4
+      .card
+        .card-body
+          p Get directions
+
