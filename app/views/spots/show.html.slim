@@ -10,12 +10,16 @@ section.mt-5.mb-5
         .card.Spot-directions
           .card-body
             h5 Get directions
-            .small
+            .small.mb-4
               i> class="fas fa-map-marker-alt"
               | #{city} &middot; #{@spot.address}
 
-            = form_tag "https://maps.google.com/maps" do
-              = text_field_tag
+            = form_tag "https://maps.google.com/maps", method: :get, authenticity_token: false, target: "_blank" do
+              = hidden_field_tag :saddr, "#{@spot.latitude},#{@spot.longitude}"
+              .form-group
+                = label_tag :saddr, "Starting location"
+                = text_field_tag :saddr, nil, class: "form-control"
+              = submit_tag :submit, class: "btn btn-primary btn-block"
 
     = render "spots/spot/similar"
 = render "spots/spot/modal"
