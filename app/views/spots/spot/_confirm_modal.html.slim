@@ -1,0 +1,16 @@
+#rModal class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rModal" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+
+      .modal-body
+        h5 Are you sure?
+        p Removing the spot cannot be undone and it will remove all the pictures and comments associated with the spot.
+
+      .modal-footer
+        button type="button" class="btn btn-secondary" data-dismiss="modal" Close
+        = link_to "Remove", spot, method: :delete, class: "btn btn-danger"
+

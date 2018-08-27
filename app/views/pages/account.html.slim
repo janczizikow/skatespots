@@ -1,0 +1,15 @@
+.wrapper
+  .container
+    .row
+      .col-md-3
+        .card
+          ul.list-group.list-group-flush
+            li.list-group-item = link_to "Profile", account_path, class: "card-link"
+            li.list-group-item = link_to "Password", edit_user_password_path, class: "card-link"
+            li.list-group-item = link_to "My reviews", "", class: "card-link"
+            li.list-group-item = link_to "My spots", account_spots_path, class: "card-link"
+      .col-md-9
+        - if action_name == "account"
+          = render "pages/account/update_form", user: current_user
+        - elsif action_name == "spots"
+          = render "pages/account/spots", user: current_user

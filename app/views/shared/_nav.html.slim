@@ -1,11 +1,13 @@
-header class= class_string("navbar navbar-expand-md fixed-top js-nav", ["navbar-dark", "Navbar navbar-light bg-light"] => home?)
+header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Navbar navbar-light bg-light"] => home?, ["fixed-top", "Header"] => spots_listing?)
+  / Logo
   = link_to root_path, class: class_string("navbar-brand d-flex align-items-center", ["navbar__logo--white", "navbar__logo"] => home?) do
     = render "shared/logo"
-    / image_tag "logo.svg", alt: "Skatespots", class: "nav-logo"
 
+  / Mobile Menu Toggle
   button class="navbar-toggler navbar__toggle" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation"
     span class="navbar-toggler-icon"
 
+  // Search bar
   #navbarToggle.collapse.navbar-collapse
     .navbar-nav.mr-auto
       = form_tag spots_path, method: :get, class: class_string("navbar__form mt-2 mt-md-0", "d-none": home?) do
@@ -14,6 +16,7 @@ header class= class_string("navbar navbar-expand-md fixed-top js-nav", ["navbar-
           .input-group-append
             = button_tag raw('<i class="fas fa-search"></i>'), class: "btn btn-outline-secondary btn-search"
 
+    // Nav Links
     ul.navbar-nav
       - if user_signed_in?
           li.nav-item
@@ -21,10 +24,15 @@ header class= class_string("navbar navbar-expand-md fixed-top js-nav", ["navbar-
           li.nav-item
             = link_to "Messages", "#", class: "nav-link"
           li.nav-item
-            = link_to "Favorites", "#", class: "nav-link"
-          li.nav-item
-            = link_to destroy_user_session_path, method: :delete, class: "nav-link" do
-              = t(".sign_out", default: "Log out")
+            = link_to "Favorites", favorites_path, class: "nav-link"
+          li.nav-item.dropdown
+            a class="nav-item dropdown-toggle" href="#" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              = cl_image_tag(current_user.avatar, width: 80, height: 80, crop: :fill, class: "Avatar")
+            .dropdown-menu.dropdown-menu-right aria-labelledby="accountDropdown"
+              = link_to "My spots", account_spots_path, class: "dropdown-item"
+              = link_to "Account Settings", account_path, class: "dropdown-item"
+              = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
+                = t(".sign_out", default: "Sign out")
       - else
         li.nav-item
             = link_to "Add a spot", new_spot_path, class: "nav-link"

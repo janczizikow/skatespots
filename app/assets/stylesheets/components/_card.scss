@@ -16,7 +16,6 @@
 
   &__inner {
     background: $white;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05);
     border-radius: 6px;
   }
 
@@ -47,6 +46,10 @@
   &__body {
     padding: 24px 16px;
     background-color: $white;
+    border: 1px solid $border-color;
+    border-top: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
   }
 
   &__title {
@@ -54,6 +57,11 @@
     font-size: 21px;
     line-height: 1.5;
     font-weight: bold;
+  }
+
+  &__address {
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   &__rating-text {

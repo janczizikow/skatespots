@@ -1,0 +1,5 @@
+.ml-3.d-block.fav-form
+  = simple_form_for [spot, favorite], method: :delete do |f|
+    = f.input :spot_id, as: :hidden, input_html: { value: spot.id }
+    = f.input :favorite_id, as: :hidden, input_html: { value: favorite.id }
+    = f.submit 'Saved', class: 'btn btn-light'

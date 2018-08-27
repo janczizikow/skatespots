@@ -1,0 +1,14 @@
+.form-group.hidden.favorite_spot_id,
+.form-group.hidden.favorite_favorite_id {
+  margin: 0;
+}
+
+.Spot-directions {
+  display: none;
+
+  @include media(map-get($grid-breakpoints, lg)) {
+    display: block;
+    position: sticky;
+    top: 15px;
+  }
+}

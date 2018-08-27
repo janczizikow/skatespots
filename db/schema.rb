@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_175636) do
+ActiveRecord::Schema.define(version: 2018_08_26_190628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,27 @@ ActiveRecord::Schema.define(version: 2018_08_24_175636) do
 
   create_table "spots", force: :cascade do |t|
     t.bigint "city_id"
+    t.bigint "user_id"
     t.string "address"
-    t.string "category"
     t.string "name"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "active", default: true, null: false
     t.index ["city_id"], name: "index_spots_on_city_id"
+    t.index ["user_id"], name: "index_spots_on_user_id"
+  end
+
+  create_table "spots_photos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_spots_photos_on_spot_id"
+    t.index ["user_id"], name: "index_spots_photos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +75,10 @@ ActiveRecord::Schema.define(version: 2018_08_24_175636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "city_id"
+    t.string "avatar"
+    t.string "username"
+    t.string "name"
+    t.text "description"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -70,5 +89,8 @@ ActiveRecord::Schema.define(version: 2018_08_24_175636) do
   add_foreign_key "reviews", "spots"
   add_foreign_key "reviews", "users"
   add_foreign_key "spots", "cities"
+  add_foreign_key "spots", "users"
+  add_foreign_key "spots_photos", "spots"
+  add_foreign_key "spots_photos", "users"
   add_foreign_key "users", "cities"
 end

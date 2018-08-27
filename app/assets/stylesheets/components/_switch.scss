@@ -1,0 +1,62 @@
+.toggle {
+  display: none;
+
+  @include media(map-get($grid-breakpoints, lg)) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+$green: #008489;
+$switch-size: 48px;
+
+// credits to: https://codepen.io/ChiaYiLai/pen/wKXxjJ
+.switch {
+  display: inline-block;
+  position: relative;
+  width: $switch-size;
+  height: $switch-size * .44;
+
+  input {
+    visibility: hidden;
+
+    &:checked + label {
+      background-color: $green;
+      // scss-lint:disable NestingDepth
+      &::after {
+        left: ($switch-size / 2 ) + 1;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $switch-size;
+    height: $switch-size * 0.44;
+    background-color: rgba(0, 0, 0, .12);
+    border-radius: $switch-size;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .24);
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: -$switch-size * .03;
+      top: -$switch-size * .03;
+      width: $switch-size / 2;
+      height: $switch-size / 2;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.04);
+      transition: .2s ease-in;
+    }
+  }
+}

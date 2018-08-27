@@ -6,12 +6,19 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.spot = @spot
+    @review.user = current_user
     authorize @review
 
     if @review.save
-      # TODO: ADD AJAX
+      respond_to do |format|
+        format.html { redirect_to spot_path(@spot) }
+        format.js
+      end
     else
-
+      respond_to do |format|
+        format.html { render 'spots/show' }
+        format.js
+      end
     end
   end
 

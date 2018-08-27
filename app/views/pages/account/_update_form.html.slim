@@ -1,0 +1,9 @@
+= simple_form_for(user, url: profiles_update_path, html: { method: :patch }) do |f|
+  = f.error_notification
+  = f.input :avatar
+  = f.input :name
+  = f.input :username
+  = f.input :city
+  = f.input :description
+  / = f.input :photo_cache, as: :hidden
+  = f.submit 'Save', class: "btn btn btn-primary"

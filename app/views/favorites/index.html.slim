@@ -1,0 +1,13 @@
+.wrapper
+  .container
+    h3.mb-4 Favorites
+    .row
+      - if @favorites.present?
+        - @favorites.each do |favorite|
+          .col-sm-6.col-xl-4
+            = render 'shared/card', spot: favorite.spot
+      - else
+          .col
+            p Nothing saved yet
+            p
+              | When you find something you like, click the heart icon to save it.

@@ -1,12 +1,26 @@
-.Banner
+= render "spots/spot/banner", spot: @spot, spots_photo: @spots_photo, favorite: favorite
+section.mt-5.mb-5
   .container
-.container
-  .row
-    .col-md-6.offset-md-1
-      = render "spots/spot/meta", spot: @spot, city: city
-      = render "spots/spot/reviews", spot: @spot, review: review
-    .col-md-4
-      .card
-        .card-body
-          p Get directions
+    .row
+      .col-lg-6.offset-lg-1
+        = render "spots/spot/meta", spot: @spot, city: city
+        = render "spots/spot/map"
+        = render "spots/spot/reviews", spot: @spot, review: review
+      .col-lg-4
+        .card.Spot-directions
+          .card-body
+            h5 Get directions
+            .small
+              i> class="fas fa-map-marker-alt"
+              | #{city} &middot; #{@spot.address}
 
+            = form_tag "https://maps.google.com/maps" do
+              = text_field_tag
+
+    = render "spots/spot/similar"
+= render "spots/spot/modal"
+  = render "spots_photos/new", spot: @spot, spots_photo: spots_photo
+= render "spots/spot/confirm_modal", spot: @spot
+
+= content_for(:after_js) do
+  = javascript_pack_tag 'spot', defer: true

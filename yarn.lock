@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@fancyapps/fancybox@^3.3.5":
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/@fancyapps/fancybox/-/fancybox-3.3.5.tgz#e0bead520450ff0af51d353a17ac6bf864ba0f49"
+
 "@rails/webpacker@3.5":
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.5.5.tgz#8911c66bcefc8bc6b91270e92f0d39e3c2d43116"
@@ -5100,6 +5104,10 @@ simple-swizzle@^0.2.2:
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
+
+slick-carousel@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

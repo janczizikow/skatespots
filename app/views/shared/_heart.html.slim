@@ -1,0 +1,11 @@
+- if in_favorites(spot)
+  = simple_form_for [spot, in_favorites(spot)], method: :delete do |f|
+    = f.input :spot_id, as: :hidden, input_html: { value: spot.id }
+    = f.input :favorite_id, as: :hidden, input_html: { value: in_favorites(spot).id }
+    button type="submit" class="btn-reset"
+      i class="fas fa-heart text-danger"
+- else
+  = simple_form_for [spot, favorite] do |f|
+      = f.input :spot_id, as: :hidden, input_html: { value: spot.id }
+      button type="submit" class="btn-reset" data-toggle="tooltip" data-placement="top" title="Add to favorites"
+        i class="fas fa-heart text-muted"

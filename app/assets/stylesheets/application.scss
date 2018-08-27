@@ -4,6 +4,7 @@
 @import "themes/theme";
 
 @import "vendors/index";
+@import "vendors/jquery.fileuploader.min.css";
 
 @import "base/base";
 @import "base/helpers";
@@ -11,9 +12,15 @@
 @import "layout/navbar";
 @import "layout/footer";
 
+@import "components/avatar";
 @import "components/hero";
+@import "components/filters";
+@import "components/switch";
 @import "components/card";
 @import "components/banner";
+@import "components/form_upload";
 
 @import "pages/home";
+@import "pages/devise";
 @import "pages/spots";
+@import "pages/spot";

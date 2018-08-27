@@ -1,0 +1,8 @@
+section.Home__Cards
+  .container
+    h2 class="Home__cards-heading" Recently Added Spots
+    .row
+      - @spots.each do |spot|
+        .div class="col-sm-6 col-md-4"
+          = render "shared/card", spot: spot
+

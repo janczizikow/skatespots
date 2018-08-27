@@ -1,0 +1,12 @@
+.wrapper style="margin-top: 60px;"
+  .container
+    h1 Edit spot
+    p Find me in app/views/spots/new.html.erb
+    = simple_form_for([@spot]) do |f|
+      = f.input :name
+      = f.input :city, :input_html => { :value => @spot.city.name }
+      = f.input :address
+      = f.input :description
+      .form-group
+        = f.file_field :photos
+      = f.button :submit, class: "btn btn-primary"

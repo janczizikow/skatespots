@@ -1,4 +1,10 @@
 import 'bootstrap';
 import 'lazysizes';
 import "lazysizes/plugins/blur-up/ls.blur-up";
-console.log('Hello');
+
+import mapToggle from '../components/mapToggle';
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  mapToggle();
+});

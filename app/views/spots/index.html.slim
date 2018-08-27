@@ -1,9 +1,15 @@
-.wrapper
+= render "shared/filters"
+.wrapper--big
   .container-fluid
-    .Spots
-      .Spots__grid
-        .row
-          - @spots.each do |spot|
-            .col
-              = render 'shared/card', spot: spot
-      .Spots__map
+    - if spots?
+      h3 = num_of_spots
+      .Spots
+        .Spots__grid
+          .row class="js-spots-cards"
+            - @spots.each do |spot|
+              .col-sm-6
+                = render "shared/card", spot: spot
+        = render "spots/spots/map"
+    - else
+      h3 No results
+      p We couldn't find anything matching your search. Try searching other keywords.

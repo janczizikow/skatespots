@@ -1,0 +1,15 @@
+.Filters {
+  position: fixed;
+  padding: 1rem 0;
+  top: $navbar-height;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  border-bottom: 1px solid $border-color;
+  z-index: 1000;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}

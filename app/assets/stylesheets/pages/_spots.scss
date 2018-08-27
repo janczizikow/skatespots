@@ -1,3 +1,7 @@
+.wrapper--big {
+  margin-top: 6rem;
+}
+
 .Spots {
   display: flex;
 
@@ -12,5 +16,21 @@
       display: block;
       flex: 0 0 420px;
     }
+  }
+}
+
+.Map {
+  display: none;
+  position: relative;
+
+  &--show {
+    display: block;
+  }
+
+  &__inner {
+    position: sticky;
+    top: calc(#{$navbar-height} + 15px);
+    left: 0;
+    padding-left: 15px;
   }
 }

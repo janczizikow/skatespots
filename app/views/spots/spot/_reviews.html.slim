@@ -1,7 +1,8 @@
 hr
 .d-flex.align-items-center
-  h4.mr-2.mb-0 #{reviews_count} Reviews
-  = render 'shared/stars', rating: rating
-hr
+  h4.mr-2.mb-0 #{reviews_count(spot)} Reviews
+  = render "shared/stars", rating: rating(spot)
+- reviews.each do |r|
+  = render "reviews/review", review: r
 - if user_signed_in?
-= render 'reviews/new', spot: spot, review: review
+  = render "reviews/new", spot: spot, review: review

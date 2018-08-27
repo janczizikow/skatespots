@@ -1,0 +1,15 @@
+/ # FIXME: CHOOSE FEATURED IMG
+.Banner style=("background-image: url( #{cl_image_path spot.spots_photos.first.photo} )" if spot.spots_photos.first.photo.present?)
+  .Banner__buttons--photos
+    button class="btn btn-light" data-toggle="modal" data-target="#spotAddPhoto" Add photo
+    - @spot.spots_photos.each_with_index do |spot, i|
+      - if i == 0
+        = link_to "View photos", "#{spot.photo}", class: "btn btn-light ml-3", data: { fancybox: "photo-#{@spot.id}" }
+      - else
+        = link_to nil, "#{spot.photo}", class: "d-none", data: { fancybox: "photo-#{@spot.id}" }
+  .Banner__buttons--social
+    = link_to "Share", "#", class: "btn btn-light"
+    - if user_signed_in? && in_favorites(spot).present?
+      = render "favorites/destroy", spot: spot, favorite: in_favorites(spot)
+    - else
+      = render "favorites/new", spot: spot, favorite: favorite

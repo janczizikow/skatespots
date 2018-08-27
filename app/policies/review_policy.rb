@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
@@ -6,10 +8,10 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    !user.nil?
+    user.present?
   end
 
   def destroy?
-    record.user = user
+    record.user == user
   end
 end

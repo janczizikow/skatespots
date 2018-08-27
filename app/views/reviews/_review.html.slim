@@ -1,0 +1,8 @@
+.Review
+  hr
+    .media
+      img src=(user_photo) class="Avatar--lg"
+      .ml-3
+        p.font-weight-bold.m-0 = user.username
+        span.small = review.created_at.strftime('%b %d, %Y')
+    .mt-3 = review&.content
