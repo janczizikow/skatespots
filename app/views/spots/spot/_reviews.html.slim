@@ -1,8 +1,18 @@
-hr
-.d-flex.align-items-center
-  h4.mr-2.mb-0 #{reviews_count(spot)} Reviews
-  = render "shared/stars", rating: rating(spot)
+.Reviews.mt-5
+  - if reviews_count(spot) > 0
+      .d-flex.align-items-center
+        h4.mr-2.mb-0 #{reviews_count(spot)} Reviews
+        = render "shared/stars", rating: rating(spot)
+  - else
+    h4 No reviews (yet)
+    p This spot doesn't have any reviews. If you visited it, why not add one?
 - reviews.each do |r|
   = render "reviews/review", review: r
 - if user_signed_in?
   = render "reviews/new", spot: spot, review: review
+- else
+  div.mt-5
+    p
+      ' You must
+      = link_to "sign in", new_user_session_path
+      |  to add a review

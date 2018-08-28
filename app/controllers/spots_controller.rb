@@ -16,12 +16,12 @@ class SpotsController < ApplicationController
   def show
     @spots_photo = SpotsPhoto.new
     @markers = [{
-      id: "#{@spot.id}#",
-      title: @spot.name,
-      address: @spot.address,
-      photo: @spot.spots_photos.first.photo,
       lat: @spot.latitude,
-      lng: @spot.longitude
+      lng: @spot.longitude,
+      infoWindow: {
+        content: render_to_string(partial: '/spots/map_box', locals: {spot: @spot}),
+        'maxWidth': 280
+      }
     }]
   end
 
@@ -35,21 +35,14 @@ class SpotsController < ApplicationController
     if city_result.success?
       city = city_result.data
     else
-      render :create
+      render :new, error: city_result.error
     end
 
-    spot_result = CreateSpot.new(spot_params.merge(city: city).merge(user: current_user)).call
-    if spot_result.success?
-      @spot = spot_result.data
-    else
-      render :create
-    end
-
-    photo_result = AddPhoto.new(user: current_user, spot: @spot, photo: spot_params[:photo]).call
+    @spot = Spot.new(spot_params.merge(city: city).merge(user: current_user))
 
     authorize @spot
 
-    if photo_result.success?
+    if @spot.save
       redirect_to @spot
     else
       render :new
@@ -59,10 +52,18 @@ class SpotsController < ApplicationController
   def edit; end
 
   def update
+    city_result = CreateCity.new(city: spot_params[:city]).call
+    if city_result.success?
+      city = city_result.data
+    else
+      render :edit, error: city_result.error
+    end
+
     if @spot.update(
       name: spot_params[:name],
       address: spot_params[:address],
-      description: spot_params[:description]
+      description: spot_params[:description],
+      city_id: city.id
     )
       redirect_to @spot
     else
@@ -87,19 +88,20 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :description, :address, :city, :photos, :photo)
+    params.require(:spot).permit(:name, :description, :address, :city,
+                                 spots_photos_attributes: %i[user_id photo],
+                                 spots_categories_attributes: :category_id)
   end
 
   def set_spots_markers
     @markers = @spots.where.not(latitude: nil, longitude: nil).map do |spot|
       {
-        id: spot.id,
-        title: spot.name,
-        address: spot.address,
-        photo: spot.spots_photos.first.photo,
         lat: spot.latitude,
         lng: spot.longitude,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        infoWindow: {
+          content: render_to_string(partial: '/spots/map_box', locals: {spot: spot}),
+          'maxWidth': 280
+        }
       }
     end
   end

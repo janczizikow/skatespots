@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :spots_category do
+    spot nil
+    category nil
+  end
+  factory :category do
+    name "MyString"
+  end
   factory :spots_photo do
     user nil
     spot nil

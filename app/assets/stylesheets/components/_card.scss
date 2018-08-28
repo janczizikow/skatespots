@@ -7,11 +7,20 @@
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
 
   &:hover,
   &:focus {
     text-decoration: none;
     color: inherit;
+    outline: 0;
+  }
+
+  @include media(map-get($grid-breakpoints, md)) {
+    &:hover,
+    &:focus {
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__inner {

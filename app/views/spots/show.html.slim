@@ -1,7 +1,7 @@
 = render "spots/spot/banner", spot: @spot, spots_photo: @spots_photo, favorite: favorite
 section.mt-5.mb-5
   .container
-    .row
+    .row.mb-5
       .col-lg-6.offset-lg-1
         = render "spots/spot/meta", spot: @spot, city: city
         = render "spots/spot/map"
@@ -9,19 +9,23 @@ section.mt-5.mb-5
       .col-lg-4
         .card.Spot-directions
           .card-body
-            h5 Get directions
+            h5 Directions
             .small.mb-4
-              i> class="fas fa-map-marker-alt"
+              i> class="fas fa-map-marker-alt text-primary"
               | #{city} &middot; #{@spot.address}
 
-            = form_tag "https://maps.google.com/maps", method: :get, authenticity_token: false, target: "_blank" do
-              = hidden_field_tag :saddr, "#{@spot.latitude},#{@spot.longitude}"
+            form action="https://maps.google.com/maps" method="get" target="_blank"
+              = hidden_field_tag :daddr, "#{@spot.latitude},#{@spot.longitude}"
               .form-group
                 = label_tag :saddr, "Starting location"
-                = text_field_tag :saddr, nil, class: "form-control"
-              = submit_tag :submit, class: "btn btn-primary btn-block"
-
-    = render "spots/spot/similar"
+                = hidden_field_tag :saddr, nil, class: ""
+                .input-group
+                  = text_field_tag :address, nil, class: "form-control js-input"
+                  .input-group-append
+                    button type="button" class="js-get-location btn btn-outline-secondary"
+                      i class="far fa-compass"
+              button type="submit" class="btn btn-primary btn-lg btn-block" Get directions
+    = render "spots/spot/nearby"
 = render "spots/spot/modal"
   = render "spots_photos/new", spot: @spot, spots_photo: spots_photo
 = render "spots/spot/confirm_modal", spot: @spot

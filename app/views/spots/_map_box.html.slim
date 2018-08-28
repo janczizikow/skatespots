@@ -1,0 +1,7 @@
+= link_to spot, class: "map-marker-info", style: "color: #484848;text-decoration: none;" do
+  div style="overflow:hidden;"
+    div role="img" style=("transform: scale(2);width: 100%;height: 150px; background-image: url(#{spot.spots_photos.first.photo});background-repeat: no-repeat;background-size: cover;background-position: 50% 50%;" if spot.spots_photos.present? && spot.spots_photos.first.photo.present?)
+    div style="margin: 8px 0;"
+      .spot.title style="overflow: hidden;font-weight: 500;font-size: 14px;" #{spot.name}
+    = render "shared/card_stars", rating: rating(spot), count: reviews_count(spot)
+    div class="address-line full-width" style="margin-top:8px;font-size: 13px;color: #333;" #{spot.address}

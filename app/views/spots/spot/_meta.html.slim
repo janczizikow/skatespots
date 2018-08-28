@@ -3,9 +3,17 @@
     h1.Spot__title = spot.name
     - if spot.user == current_user
       d.flex
-        = link_to raw('<i class="far fa-edit"></i> Edit'), edit_spot_path(spot)
-        = link_to raw('<i class="far fa-trash-alt"></i> Remove'), "#", data: { toggle: "modal", target: "#rModal" }, class: 'ml-3'
-    .mt-3.mb-2 = city
+        = link_to raw('<i class="far fa-edit mr-1"></i> Edit'), edit_spot_path(spot), class: "small"
+        = link_to raw('<i class="far fa-trash-alt mr-1"></i> Remove'), "#", data: { toggle: "modal", target: "#rModal" }, class: 'small ml-3'
+    .mt-3.mb-3
+      i class="fas fa-sm fa-building"
+      span.ml-2
+        = city
+    div.Spot__categories
+      - spot.categories.pluck(:name).each do |category|
+        d.flex.align-items-center
+          i class="fas fa-certificate text-body"
+          span.ml-1 #{category}
   div.text-center
     img src=(user_photo) class="Avatar--lg img-fluid rounded-circle"
     p = user.username

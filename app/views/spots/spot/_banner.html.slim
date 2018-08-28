@@ -1,5 +1,5 @@
-/ # FIXME: CHOOSE FEATURED IMG
-.Banner style=("background-image: url( #{cl_image_path spot.spots_photos.first.photo} )" if spot.spots_photos.first.photo.present?)
+/ # FIXME: CHOOSE FEATURED IMG or make it a carousel
+.Banner style=("background-image: url( #{cl_image_path spot.spots_photos.first.photo} )" if spot.spots_photos.present? && spot.spots_photos.first.photo.present?)
   .Banner__buttons--photos
     button class="btn btn-light" data-toggle="modal" data-target="#spotAddPhoto" Add photo
     - @spot.spots_photos.each_with_index do |spot, i|

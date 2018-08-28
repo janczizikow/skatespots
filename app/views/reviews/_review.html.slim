@@ -1,8 +1,10 @@
+hr
 .Review
-  hr
-    .media
-      img src=(user_photo) class="Avatar--lg"
-      .ml-3
-        p.font-weight-bold.m-0 = user.username
-        span.small = review.created_at.strftime('%b %d, %Y')
-    .mt-3 = review&.content
+  .media
+    img src=(user_photo) class="Avatar--md"
+    div.d-flex.ml-3.Review__header
+      div
+        p.font-weight-medium.small.m-0.mb-1 = user.username
+        = render "shared/stars", rating: review.rating, small: true
+      span.small = review.created_at.strftime('%b %d, %Y')
+  .mt-3 = review&.content

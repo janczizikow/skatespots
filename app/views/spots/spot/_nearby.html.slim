@@ -1,0 +1,11 @@
+.row
+  .col-md-10.offset-md-1
+    hr
+      h4.mt-4 Spots nearby
+      - if @spot.geocoded?
+        .row
+          - Spot.geocoded.first.nearbys(50).each do |spot|
+            .div class="col-sm-6 col-md-4"
+              = render "shared/card", spot: spot
+      - else
+        p Couldn't find any spots nearby. It seems like the location cannot be found.

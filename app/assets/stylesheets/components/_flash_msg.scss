@@ -1,0 +1,14 @@
+.flash__msg {
+  position: absolute;
+  top: $navbar-height;
+  width: 100%;
+  z-index: 700;
+  border: 0;
+  border-radius: 0;
+
+  &--error {
+    background-color: $primary;
+    color: $white;
+    text-align: center;
+  }
+}

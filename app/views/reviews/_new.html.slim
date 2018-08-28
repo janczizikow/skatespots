@@ -1,6 +1,8 @@
 hr
-h4 Add a review
-= simple_form_for [spot, review], remote: true do |f|
-  = f.input :rating, class: 'form-control'
-  = f.input :content, class: 'form-control'
-  = f.submit 'Add review', class: 'btn btn-primary'
+div.mt-5
+  h4 Add a review
+  = simple_form_for [spot, review] do |f|
+    = label_tag "review[rating]", "Rating"
+    = f.select :rating, (1..5).to_a, {},  class: 'js-rating'
+    = f.input :content, class: 'form-control'
+    = f.submit 'Add review', class: 'btn btn-secondary'

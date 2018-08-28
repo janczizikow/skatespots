@@ -1,6 +1,6 @@
 .d-flex
   - (1..5).to_a.each do |n|
     - if n <= rating
-      i class="fas fa-star text-warning"
+      i class=(class_string("fas fa-star text-warning", "fa-xs": local_assigns[:small].present?))
     - else
-      i class="fas fa-star text-muted"
+      i class=(class_string("fas fa-star text-muted", "fa-xs": local_assigns[:small].present?))

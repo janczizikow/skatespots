@@ -1,7 +1,8 @@
 $font-family-sans-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$primary: #ff5a5f;
-$body-color: #484848;
-$border-color: #ebebeb;
+$primary: #ed3e44;
+$body-color: #454547;
+// #29292c
+$border-color: #f0f0f2;
 $input-border-color: $border-color;
 
 // Fixes for simple form for boostrap 4
@@ -18,4 +19,18 @@ $input-border-color: $border-color;
     background: theme-color-level("danger", -10);
     border-color: theme-color("danger");
   }
+}
+
+.br-theme-fontawesome-stars-o .br-widget a.br-active:after,
+.br-theme-fontawesome-stars-o .br-widget a.br-selected:after {
+  color: #ffc107 !important;
+  outline: 0;
+}
+
+a {
+  transition: color 0.1s linear;
+}
+
+a:focus {
+  outline: 3px solid rgba($primary, 0.6);
 }
