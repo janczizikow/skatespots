@@ -42,6 +42,9 @@ gem 'geocoder'
 # Decorator
 gem 'draper'
 
+gem 'nokogiri'
+gem 'watir'
+
 # Frontend gems
 gem 'autoprefixer-rails'
 gem 'carrierwave', '~> 1.2'

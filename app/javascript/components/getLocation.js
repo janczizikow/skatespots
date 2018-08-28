@@ -9,7 +9,7 @@ const getLocation = (input, posOutput) => {
     const coordsToString = `${coords.lat},${coords.lng}`;
     posOutput.value = coordsToString;
 
-    axios.get(`${API}${coords.lat},${coords.lng}&key=${process.env.GOOGLE_API_CLIENT_GEO}`)
+    axios.get(`${API}${coords.lat},${coords.lng}&key=AIzaSyBEbiQIC9QIzW-LmIHqy9qq_-dgURfx_4Q`)
       .then(response => {
         // handle success
         console.log(response);

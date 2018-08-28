@@ -2,7 +2,8 @@
   .Card__inner
     figure.Card__img
       - if spot.spots_photos.present?
-        img class="lazyload" alt="#{spot.name}" src="#{spot.spots_photos.first.photo}"
+        / img class="lazyload" alt="#{spot.name}" src="#{spot.spots_photos.first.photo}"
+        = cl_image_tag spot.spots_photos.first.photo, width: 800, crop: :fill
     .Card__body
       h3.Card__title = spot.name
       .Card__address = spot.address

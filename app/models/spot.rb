@@ -8,11 +8,13 @@ class Spot < ApplicationRecord
 
   has_many :spots_categories, inverse_of: :spot, dependent: :restrict_with_exception
   has_many :categories, through: :spots_categories
-  has_many :spots_photos, inverse_of: :spot, dependent: :restrict_with_exception
+  has_many :spots_photos, inverse_of: :spot, dependent: :destroy
+  # dependent: :restrict_with_exception
   # has_many :photos,
            # class_name: 'SpotsPhoto', foreign_key: 'spot_id',
            # dependent: :restrict_with_exception
   has_many :reviews, dependent: :restrict_with_exception
+  has_many :favorites, dependent: :destroy
 
   accepts_nested_attributes_for :spots_photos, reject_if: proc { |attributes| attributes[:photo].blank? }
   accepts_nested_attributes_for :spots_categories, reject_if: proc { |attributes| attributes[:category_id].blank? }

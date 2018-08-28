@@ -6,6 +6,8 @@ class SpotsController < ApplicationController
 
   def index
     @spots = if params[:query].present?
+               # Alternatively this can be done by geocoder
+               # policy_scope(Spot.active.near(params[:query]))
                policy_scope(Spot.active).global_location_search(params[:query])
              else
                policy_scope(Spot.active)
