@@ -6,6 +6,6 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}, inclusion: {
     in:
-      %w[Street Skatepark Indoor Outdoor Rails Stairs Mini Bowl]
+      ['Street', 'Skatepark', 'Indoor', 'Outdoor', 'Rails', 'Stairs', 'Mini Ramp', 'Bowl']
   }
 end
