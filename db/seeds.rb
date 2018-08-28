@@ -12,7 +12,7 @@ unless Category.all.present?
   puts 'Generating categories...'
   file = Rails.root.join('db', 'categories.yml')
   data = YAML.safe_load(File.read(file))
-  data['categories'].each { |category| Category.create!(name: category) }
+  data['categories'].each { |category| Category.create! category }
 end
 ##################################################################
 
