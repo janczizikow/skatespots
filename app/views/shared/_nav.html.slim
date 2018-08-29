@@ -1,4 +1,4 @@
-header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Navbar navbar-light bg-light"] => home?, ["fixed-top", "Header"] => spots_listing?)
+header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Navbar bg-white navbar-light"] => home?, ["fixed-top", "Header"] => spots_listing?)
   / Logo
   = link_to root_path, class: class_string("navbar-brand d-flex align-items-center", ["navbar__logo--white", "navbar__logo"] => home?) do
     = render "shared/logo"
@@ -39,4 +39,4 @@ header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Na
         li.nav-item
           = link_to "Sign in", new_user_session_path, class: "nav-link"
         li.nav-item
-          = link_to "Sign up", new_user_registration_path, class: "btn btn-outline-success btn-block btn-add my-2 my-md-0"
+          = link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-block btn-add my-2 my-md-0"

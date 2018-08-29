@@ -1,7 +1,7 @@
 .Reviews.mt-5
   - if reviews_count(spot) > 0
       .d-flex.align-items-center
-        h4.mr-2.mb-0 #{reviews_count(spot)} Reviews
+        h4.mr-2.mb-0 #{reviews_count(spot)} #{reviews_count(spot) == 1 ? 'Review' : 'Reviews'}
         = render "shared/stars", rating: rating(spot)
   - else
     h4 No reviews (yet)

@@ -2,12 +2,11 @@
   .Card__inner
     figure.Card__img
       - if spot.spots_photos.present?
-        / img class="lazyload" alt="#{spot.name}" src="#{spot.spots_photos.first.photo}"
-        = cl_image_tag spot.spots_photos.first.photo, width: 800, crop: :fill
+        img class="lazyload" alt="#{spot.name}" src="#{spot.spots_photos.first.photo_url(:placeholder)}" data-lowsrc="#{spot.spots_photos.first.photo_url(:placeholder)}" data-src="#{spot.spots_photos.first.photo_url(:thumbnail)}"
     .Card__body
       h3.Card__title = spot.name
       .Card__address = spot.address
       .Card__meta
         .Card__rating
-          = render "shared/card_stars", rating: rating(spot), count: reviews_count(spot)
+          = render "shared/card_stars", rating: rating(spot), count: reviews_count(spot), small: true
         = render "shared/heart", spot: spot, favorite: favorite

@@ -1,0 +1,17 @@
+.card.Spot-directions
+  .card-body
+    h5 Directions
+    .small.mb-4
+      i> class="fas fa-map-marker-alt text-primary"
+      | #{city} &middot; #{spot.address}
+
+    form action="https://maps.google.com/maps" method="get" target="_blank"
+      = hidden_field_tag :daddr, "#{spot.latitude},#{spot.longitude}"
+      .form-group
+        = label_tag :saddr, "Starting location"
+        .input-group
+          = text_field_tag :saddr, nil, class: "form-control js-input"
+          .input-group-append
+            button type="button" data-toggle="tooltip" data-placement="top" title="Get current location" class="js-get-location btn btn-outline-secondary"
+              i class="far fa-compass"
+      button type="submit" class="btn btn-primary btn-lg btn-block" Get directions

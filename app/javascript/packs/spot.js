@@ -18,13 +18,12 @@ $(document).ready(function() {
   }
   const input = document.querySelector('.js-input');
   const getLocationTrigger = document.querySelector('.js-get-location');
-  const cordsInput = document.querySelector('input[name=saddr]');
 
 
-  if (input && getLocationTrigger && cordsInput) {
+  if (input && getLocationTrigger) {
     getLocationTrigger.addEventListener('click', e => {
       e.preventDefault();
-      getLocation(input, cordsInput);
+      getLocation(input, e.currentTarget);
     });
 
   }

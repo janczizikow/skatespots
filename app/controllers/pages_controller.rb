@@ -9,5 +9,7 @@ class PagesController < ApplicationController
 
   def account; end
 
-  def spots; end
+  def spots
+    @spots = Spot.user_spots(current_user)
+  end
 end

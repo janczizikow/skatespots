@@ -1,25 +1,39 @@
 import axios from 'axios';
 
-const getLocation = (input, posOutput) => {
+const getLocation = (input, btn) => {
   const API = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+  const loadingClasses = ['Btn', 'Btn--loading'];
+  const loadingOff = () => {
+      input.disabled = false;
+      loadingClasses.forEach(css => {
+      btn.classList.remove(css);
+    });
+  };
+
+  input.disabled = true;
+  loadingClasses.forEach(css => {
+    btn.classList.add(css);
+  });
 
   const success = position => {
 
     const coords = { lat: position.coords.latitude, lng: position.coords.longitude };
-    const coordsToString = `${coords.lat},${coords.lng}`;
-    posOutput.value = coordsToString;
 
     axios.get(`${API}${coords.lat},${coords.lng}&key=AIzaSyBEbiQIC9QIzW-LmIHqy9qq_-dgURfx_4Q`)
       .then(response => {
-        // handle success
+
         console.log(response);
+
+        loadingOff();
+
         if (response.data.results){
           input.value = response.data.results[0].formatted_address;
         }
       })
       .catch(error => {
         // handle error
-        console.log(error);
+        loadingOff();
+        alert('error');
       });
   };
 

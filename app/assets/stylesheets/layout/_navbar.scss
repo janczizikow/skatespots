@@ -8,14 +8,11 @@
 
 .navbar {
   height: 64px;
+  padding: 0.5rem 1.5rem;
 }
 
 .Navbar {
   border-bottom: 1px solid $border-color;
-}
-
-.bg-light {
-  background-color: $white !important;
 }
 
 .scrolled {

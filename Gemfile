@@ -43,7 +43,6 @@ gem 'geocoder'
 gem 'draper'
 
 gem 'nokogiri'
-gem 'watir'
 
 # Frontend gems
 gem 'autoprefixer-rails'

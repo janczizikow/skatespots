@@ -1,4 +1,8 @@
 footer.footer
   .container
     .d-flex
-      span &copy; Skatespots
+      p &copy; Skatespots #{Time.zone.now.year}
+      | &nbsp; &middot; &nbsp;
+      = link_to "Privacy", "#"
+      | &nbsp; &middot; &nbsp;
+      = link_to "Terms", "#"

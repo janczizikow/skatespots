@@ -23,6 +23,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    # TODO: Add logic
+    @review = Review.find(params[:id])
+    if @review.destroy
+    else
+    end
   end
 
   private

@@ -6,6 +6,8 @@
 @import "vendors/index";
 @import "vendors/jquery.fileuploader.min.css";
 
+@import "themes/overrides";
+
 @import "base/base";
 @import "base/helpers";
 
@@ -18,6 +20,7 @@
 @import "components/filters";
 @import "components/switch";
 @import "components/card";
+@import "components/button";
 @import "components/banner";
 @import "components/form_upload";
 @import "components/review";

@@ -1,6 +1,11 @@
 .Filters
   .container-fluid
     .Filters__inner
-      .Filters__items
-        button type="button" class="" Some filter
+      .Filters__items.d-flex.align-items-center
+        select class="custom-select custom-select-sm"
+          option selected="true" Sort
+          option value="1" Most relevant
+          option value="2" Recently added
+          option value="3" Highest rating
+        button type="button" class="btn btn-light btn-sm ml-3" Filters
       = render "shared/switch"

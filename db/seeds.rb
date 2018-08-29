@@ -3,7 +3,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'yaml'
-# require 'pry-byebug'
+# require 'pry-byebug' # comment out before deploying!!! gem not included in production
 require 'geocoder'
 
 ##################################################################
@@ -52,8 +52,10 @@ def scrapper(url)
 end
 
 # scrapper('https://myskatespots.com/listing/fjerritslev-skatepark/')
-
-links_data = File.join(__dir__, "sample_data", "spots.yml")
+# Berlin
+links_data = File.join(__dir__, "sample_data", "links.yml")
+# 100 random cities
+# links_data = File.join(__dir__, "sample_data", "spots.yml")
 
 puts 'Generating spots...'
 urls = YAML.safe_load(File.read(links_data))
@@ -61,12 +63,13 @@ urls.take(50).each do |url|
   params = scrapper(url)
   puts "Geocoding..."
   result = Geocoder.search(params[:address])
+  country = result.first.country
   city_name = result.first.city
   address = result.first.address.gsub(result.first.country, "").gsub(", ", "")
   city = CreateCity.new(city: city_name).call
   if city.success?
     puts "Generating spot..."
-    spot = Spot.create!(params.except(:photo, :categories).merge(user_id: user.id, city_id: city.data.id))
+    spot = Spot.create!(params.except(:photo, :categories).merge(country: country, user_id: user.id, city_id: city.data.id))
     puts "Generated spot #{spot.name.upcase}!"
     if params[:photo].present?
       puts "Uploading picture from #{params[:photo]}..."
@@ -87,4 +90,6 @@ urls.take(50).each do |url|
     next
   end
 end
+
+puts "All done!"
 

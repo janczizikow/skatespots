@@ -12,3 +12,15 @@
     top: 15px;
   }
 }
+
+.Spot__category--link {
+  color: $primary;
+  border-bottom: 1px solid rgba($primary, 0.3);
+  transition: border-color 150ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    border-bottom: 1px solid rgba($primary, 0.6);
+  }
+}

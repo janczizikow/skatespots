@@ -3,6 +3,7 @@ const mapToggle = () => {
   const map = document.querySelector(".js-map");
   const cardsNode = document.querySelector(".js-spots-cards");
   let cards = null;
+
   if (cardsNode) {
     cards = document.querySelector(".js-spots-cards").children;
   }

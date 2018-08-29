@@ -1,3 +1,15 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: $primary;
+  color: $white;
+}
+
+// Sticky footer
+// Adjusts the position of the main content
 .Site {
   display: flex;
   flex-direction: column;

@@ -3,7 +3,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process eager: true
+  process eager: true # Force version generation at upload time.
 
   def extension_whitelist
     %w[jpg jpeg gif png]

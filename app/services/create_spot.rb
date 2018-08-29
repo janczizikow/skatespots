@@ -12,13 +12,13 @@ class CreateSpot
   private
 
   def create_spot
-    new_spot
-    @spot.city = @params[:city]
-    @spot.user = @params[:user]
-    if @spot.save
-      Command::Result::Success.new(@spot)
+    # new_spot
+    # @spot.city = @params[:city]
+    # @spot.user = @params[:user]
+    if spot.create(@params)
+      Command::Result::Success.new(spot)
     else
-      Command::Result::Error.new(@spot.errors)
+      Command::Result::Error.new(spot.errors)
     end
   end
 

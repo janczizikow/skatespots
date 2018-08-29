@@ -9,13 +9,13 @@
       i class="fas fa-sm fa-building"
       span.ml-2
         = city
-    div.Spot__categories
-      - spot.categories.pluck(:name).each do |category|
-        d.flex.align-items-center
-          i class="fas fa-certificate text-body"
-          span.ml-1 #{category}
-  div.text-center
-    img src=(user_photo) class="Avatar--lg img-fluid rounded-circle"
+    div.Spot__categories.mb-4
+      - spot.categories.pluck(:name).each_with_index do |category, i|
+        div class= class_string("d-inline-block", "ml-3": i != 0)
+          i class="fas fa-sm fa-tag text-teal"
+          =link_to "#{category}", spots_path(category: category), class: "Spot__category--link span ml-1"
+  div.text-center data-toggle="tooltip" data-placement="top" title="Listing Author"
+    img src=(user_photo) class="Avatar--lg img-fluid rounded-circle mb-1"
     p = user.username
 
 p = spot.description

@@ -29,7 +29,7 @@
 
   &__inner {
     position: sticky;
-    top: calc(#{$navbar-height} + 15px);
+    top: calc(#{$navbar-height} + #{$filter-menu-height} + 15px);
     left: 0;
     padding-left: 15px;
   }

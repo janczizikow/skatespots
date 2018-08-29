@@ -1,9 +1,10 @@
 .Filters {
+  padding: 0.5rem 0;
   position: fixed;
-  padding: 1rem 0;
   top: $navbar-height;
   left: 0;
   width: 100%;
+  height: $filter-menu-height;
   background-color: $white;
   border-bottom: 1px solid $border-color;
   z-index: 1000;

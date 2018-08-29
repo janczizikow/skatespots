@@ -1,4 +1,4 @@
-= simple_form_for(user, url: profiles_update_path, html: { method: :patch }) do |f|
+= simple_form_for(user, url: profile_path(user), method: :patch, html: { method: :patch }) do |f|
   = f.error_notification
   = f.input :avatar
   = f.input :name
