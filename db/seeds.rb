@@ -65,9 +65,15 @@ urls.each do |url|
   params = scrapper(url)
   puts "Geocoding..."
   result = Geocoder.search(params[:address])
-  city_name = result.first.city
-  address = result.first.address.gsub(result.first.country, "").gsub(", ", "")
-  city = CreateCity.new(city: city_name).call
+  if result.present?
+    city_name = result.first.city
+    address = result.first.address.gsub(result.first.country, "").gsub(", ", "")
+    city = CreateCity.new(city: city_name).call
+  else
+    puts 'GEOCODER NO RESULTS'
+    puts 'SKIPPING'
+    next
+  end
   if city.success?
     next if Spot.find_by(name: params[:title]).present?
     puts "Generating spot..."
