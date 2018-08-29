@@ -1,5 +1,7 @@
 .wrapper--big {
-  margin-top: 6rem;
+  @include media(map-get($grid-breakpoints, lg)) {
+    margin-top: 6rem;
+  }
 }
 
 .Spots {
@@ -23,7 +25,7 @@
   display: none;
   position: relative;
 
-  &--show {
+  @include media(map-get($grid-breakpoints, lg)) {
     display: block;
   }
 

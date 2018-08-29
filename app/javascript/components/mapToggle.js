@@ -1,3 +1,5 @@
+import "./throttle";
+
 const mapToggle = () => {
   const toggle = document.querySelector(".js-map-toggle");
   const map = document.querySelector(".js-map");
@@ -10,18 +12,18 @@ const mapToggle = () => {
 
   const toggleCardsClass = () => Array.from(cards).forEach(card => card.classList.toggle("col-lg-4"));
   const toggleMap = e => {
-    if (e.currentTarget.checked) {
-      map.classList.add("Map--show");
+    if (toggle.checked && window.innerWidth > 992) {
+      map.style.display = 'block';
       toggleCardsClass();
     } else {
-      map.classList.remove("Map--show");
+      map.style.display = 'none';
       toggleCardsClass();
     }
   };
 
-
   if (toggle && map && cards) {
     toggle.addEventListener("change", toggleMap);
+    // window.addEventListener("optimizedResize", toggleMap);
   }
 };
 

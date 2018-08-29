@@ -12,7 +12,8 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     /= stylesheet_pack_tag 'application', media: 'all' # Uncomment if you import CSS in app/javascript/packs/application.js
     = stylesheet_pack_tag 'spot', media: 'all'
-
+    / Polyfills must load sync, since they need to be active before other script runs
+    script src="https://cdn.polyfill.io/v2/polyfill.min.js"
   body class="Site"
     = render "shared/nav"
 

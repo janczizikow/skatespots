@@ -1,13 +1,18 @@
 .Filters {
-  padding: 0.5rem 0;
-  position: fixed;
-  top: $navbar-height;
-  left: 0;
-  width: 100%;
-  height: $filter-menu-height;
-  background-color: $white;
-  border-bottom: 1px solid $border-color;
-  z-index: 1000;
+  display: none;
+
+  @include media(map-get($grid-breakpoints, lg)) {
+    display: block;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: $navbar-height;
+    left: 0;
+    width: 100%;
+    height: $filter-menu-height;
+    background-color: $white;
+    border-bottom: 1px solid $border-color;
+    z-index: 1000;
+  }
 
   &__inner {
     display: flex;
