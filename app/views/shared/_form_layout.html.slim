@@ -1,0 +1,8 @@
+.wrapper style="margin-top: 60px;"
+  .container
+    .row
+      .col-md-3
+        - if local_assigns[:back].present?
+          = render "shared/back"
+      .col-md-6
+        == yield

@@ -1,21 +1,20 @@
-.wrapper style="margin-top: 60px;"
-  .container
-    h1 Add a spot
-    p Fill in the details below to add a new spot. Required fields are marked with *
-    = simple_form_for @spot do |f|
-      = f.error_notification
-      = f.input :name
-      = f.input :city
-      = f.input :address
-      = f.input :description
-      = f.fields_for :spots_categories, SpotsCategory.new do |ff|
-        .form-group
-          = ff.label "Categories (Ctrl+Click to select multiple)"
-          = ff.collection_select :category_id, Category.all, :id, :name, { }, class: 'form-control'
-          / FIXME: multiple categories is broken
-          /= ff.collection_select :category_id, Category.all, :id, :name, { selected_value: 1}, multiple: true, class: 'custom-select', size: 8
-      = f.fields_for :spots_photos, SpotsPhoto.new do |ff|
-        .form-group
-          = ff.file_field :photo
-          = ff.input :user_id, as: :hidden, input_html: { value: current_user.id }
-      = f.button :submit, class: "btn btn-primary"
+= render "shared/form_layout"
+  h1 Add a spot
+  p Fill in the details below to add a new spot. Required fields are marked with *
+  = simple_form_for @spot do |f|
+    = f.error_notification
+    = f.input :name
+    = f.input :city
+    = f.input :address
+    = f.input :description
+    = f.fields_for :spots_categories, SpotsCategory.new do |ff|
+      .form-group
+        = ff.label "Categories (Ctrl+Click to select multiple)"
+        = ff.collection_select :category_id, Category.all, :id, :name, { }, class: 'form-control'
+        / FIXME: multiple categories is broken
+        /= ff.collection_select :category_id, Category.all, :id, :name, { selected_value: 1}, multiple: true, class: 'custom-select', size: 8
+    = f.fields_for :spots_photos, SpotsPhoto.new do |ff|
+      .form-group
+        = ff.file_field :photo
+        = ff.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    = f.button :submit, class: "btn btn-primary"

@@ -6,9 +6,9 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot.active.where(nil))
-    # Alternatively this can be done by geocoder
-    # policy_scope(Spot.active.near(params[:query]))
-    @spots = policy_scope(Spot.active).global_location_search(params[:query]) if params[:query].present?
+    @spots = policy_scope(Spot.active.near(params[:query])) if params[:query].present?
+    # Geocoder > DB
+    # @spots = policy_scope(Spot.active).global_location_search(params[:query]) if params[:query].present?
     @spots = policy_scope(Spot.active).category_search(params[:category]) if params[:category].present?
     set_spots_markers
   end
@@ -43,13 +43,15 @@ class SpotsController < ApplicationController
       render :new, error: city_result.error
     end
 
-    @spot = Spot.new(spot_params.merge(city: city).merge(user: current_user))
+    @spot = Spot.new(spot_params.merge(city: city, user: current_user))
 
     authorize @spot
 
     if @spot.save
+      flash[:notice] = 'Spot created!'
       redirect_to @spot
     else
+      flash[:alert] = @spot.errors.full_messages
       render :new
     end
   end
@@ -64,14 +66,11 @@ class SpotsController < ApplicationController
       render :edit, error: city_result.error
     end
 
-    if @spot.update(
-      name: spot_params[:name],
-      address: spot_params[:address],
-      description: spot_params[:description],
-      city_id: city.id
-    )
+    if @spot.update(spot_params.merge(city: city))
+      flash[:notice] = 'Spot updated'
       redirect_to @spot
     else
+      flash[:alert] = @spot.errors.full_messages
       render :edit
     end
   end
@@ -79,8 +78,10 @@ class SpotsController < ApplicationController
   def destroy
     @spot.active = false
     if @spot.save
+      flash[:notice] = 'Spot removed'
       redirect_to spots_path
     else
+      flash[:alert] = @spot.errors.full_messages
       render :show
     end
   end

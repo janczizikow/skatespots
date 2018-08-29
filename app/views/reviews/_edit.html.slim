@@ -1,0 +1,19 @@
+#editReview class="modal fade" tabindex="-1" role="dialog" aria-labelledby="spotAddPhoto" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+
+      .modal-header
+        h5.modal-title id="editReviewTitle" Edit Review
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+
+      .modal-body
+        = simple_form_for [@spot, review] do |f|
+          = label_tag "review[rating]", "Rating"
+          = f.select :rating, (1..5).to_a, {},  class: 'js-rating'
+          = f.input :content, class: 'form-control'
+          = f.submit 'Update review', class: 'btn btn-secondary'
+      .modal-footer
+        button type="button" class="btn btn-secondary" data-dismiss="modal" Close
+        button type="button" class="btn btn-primary" Update review
+

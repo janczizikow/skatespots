@@ -8,3 +8,7 @@ hr
         = render "shared/stars", rating: review.rating, small: true
       span.small = review.created_at.strftime('%b %d, %Y')
   .mt-3 = review&.content
+  .mt-2
+    = link_to raw('<i class="far fa-edit mr-1"></i> Edit'), "#", data: { toggle: "modal", target: "#editReview" }, class: "small"
+    = link_to raw('<i class="far fa-trash-alt mr-1"></i> Remove'), spot_review_path(@spot, review), data: { confirm: 'Are you sure?' }, method: :delete, class: 'small ml-3'
+= render "reviews/edit", review: review

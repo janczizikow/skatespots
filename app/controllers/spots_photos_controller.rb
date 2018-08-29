@@ -16,7 +16,15 @@ class SpotsPhotosController < ApplicationController
   end
 
   def destroy
-    # TODO: add logic
+    @photo.find(params[:id])
+    authorize @photo
+    if @photo.destroy
+      flash[:notice] = 'Photo removed'
+      redirect_to @spot
+    else
+      flash[:alert] = @photo.errors.full_messages
+      render :spot
+    end
   end
 
   private

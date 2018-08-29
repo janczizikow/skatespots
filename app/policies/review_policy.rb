@@ -11,7 +11,11 @@ class ReviewPolicy < ApplicationPolicy
     user.present?
   end
 
-  def destroy?
+  def update?
     record.user == user
+  end
+
+  def destroy?
+    update?
   end
 end

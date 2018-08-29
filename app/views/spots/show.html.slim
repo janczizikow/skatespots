@@ -9,6 +9,9 @@ section.mt-5.mb-5
       .col-lg-4
         = render "spots/spot/directions", spot: @spot
     = render "spots/spot/nearby", nearbys: @spots_nearby
+
+// FIXME: Look at this modal mess...
+// think of a way to create 1 modal partial + yield the contents depending on action
 = render "spots/spot/modal"
   = render "spots_photos/new", spot: @spot, spots_photo: spots_photo
 = render "spots/spot/confirm_modal", spot: @spot

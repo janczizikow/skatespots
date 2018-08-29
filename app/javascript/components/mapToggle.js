@@ -23,7 +23,7 @@ const mapToggle = () => {
 
   if (toggle && map && cards) {
     toggle.addEventListener("change", toggleMap);
-    // window.addEventListener("optimizedResize", toggleMap);
+    window.addEventListener("optimizedResize", toggleMap);
   }
 };
 

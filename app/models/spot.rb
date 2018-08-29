@@ -2,11 +2,12 @@
 
 class Spot < ApplicationRecord
   include PgSearch
+  include Geocode
 
   belongs_to :city
   belongs_to :user
 
-  has_many :spots_categories, inverse_of: :spot, dependent: :restrict_with_exception
+  has_many :spots_categories, inverse_of: :spot, dependent: :destroy
   has_many :categories, through: :spots_categories
   has_many :spots_photos, inverse_of: :spot, dependent: :destroy
   # has_many :photos,
@@ -19,7 +20,7 @@ class Spot < ApplicationRecord
   accepts_nested_attributes_for :spots_categories, reject_if: proc { |attributes| attributes[:category_id].blank? }
 
   validates :city, presence: true
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: {case_sensitvie: false}
   validates :address, presence: true
 
   scope :active, -> { where(active: true) }
@@ -41,7 +42,4 @@ class Spot < ApplicationRecord
                   }, using: {
                     tsearch: {prefix: true}
                   }
-
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
 end

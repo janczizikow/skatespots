@@ -9,6 +9,8 @@
       i class="fas fa-sm fa-building"
       span.ml-2
         = city
+        | &nbsp; &middot; &nbsp;
+        = spot.country
     div.Spot__categories.mb-4
       - spot.categories.pluck(:name).each_with_index do |category, i|
         div class= class_string("d-inline-block", "ml-3": i != 0)

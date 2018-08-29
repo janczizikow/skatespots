@@ -1,4 +1,4 @@
-// (function() {
+(function() {
     var throttle = function(type, name, obj) {
         obj = obj || window;
         var running = false;
@@ -15,4 +15,4 @@
 
     /* init - you can init any event */
     throttle("resize", "optimizedResize");
-// })();
+})();

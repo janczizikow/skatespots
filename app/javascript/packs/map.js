@@ -6,13 +6,19 @@ import '../components/throttle';
 
   if (mapElement) {
     // Set height of the map automatically based on window.innerHeight
-    // FIXME: Could improve the way the map is styled on resize: e.g. Only when height changed
+    // Applies only to map on spots#index
+    let prevInnerHeight = window.innerHeight;
     if (!document.querySelector('.js-no-height')) {
       const styleMap = () => {
+        console.log('styleMap triggered');
         mapElement.style.height = `${window.innerHeight - 144}px`;
       }
-      mapElement.parentNode.style.backgroundColor = '#fff';
-      window.addEventListener("optimizedResize", styleMap);
+
+      window.addEventListener("optimizedResize", e => {
+        if (prevInnerHeight !== window.innerHeight) {
+          styleMap();
+        }
+      });
       styleMap();
     }
 

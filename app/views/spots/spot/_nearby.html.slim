@@ -2,7 +2,7 @@
   .col-lg-10.offset-lg-1
     hr
       h4.mt-4 Spots nearby
-      - unless nearbys.empty?
+      - unless nearbys.blank?
         .row
           - nearbys.each do |spot|
             .div class="col-sm-6 col-lg-4"

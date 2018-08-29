@@ -33,7 +33,11 @@ def scrapper(url)
   title = html_doc.css('h1.job_listing-title').text.strip
   address = html_doc.css('.google_map_link').first.children.reduce("") { |acc, cur| acc + " " + cur.text }.gsub("  ", " ").strip
   description = html_doc.css('.widget-title.widget-title-job_listing.ion-ios-paper-outline').first.parent.children[1].text.strip
-  photo = html_doc.css('.content-single-job_listing-hero').attribute('style').value[/\(.*?\)/].gsub(/\(|\)/, "")
+  photo = if html_doc.css('.content-single-job_listing-hero').attribute('style').present?
+             html_doc.css('.content-single-job_listing-hero').attribute('style').value[/\(.*?\)/].gsub(/\(|\)/, "")
+          else
+            nil
+          end
   categories = html_doc.css('.job_listing_tag-list').children.map {|el| el.text}.select {|el| CATEGORIES.include?(el)}
   params = {
     name: title,
@@ -53,23 +57,21 @@ end
 
 # scrapper('https://myskatespots.com/listing/fjerritslev-skatepark/')
 # Berlin
-links_data = File.join(__dir__, "sample_data", "links.yml")
-# 100 random cities
-# links_data = File.join(__dir__, "sample_data", "spots.yml")
+links_data = File.join(__dir__, "sample_data", "spots.yml")
 
 puts 'Generating spots...'
 urls = YAML.safe_load(File.read(links_data))
-urls.take(50).each do |url|
+urls.each do |url|
   params = scrapper(url)
   puts "Geocoding..."
   result = Geocoder.search(params[:address])
-  country = result.first.country
   city_name = result.first.city
   address = result.first.address.gsub(result.first.country, "").gsub(", ", "")
   city = CreateCity.new(city: city_name).call
   if city.success?
+    next if Spot.find_by(name: params[:title]).present?
     puts "Generating spot..."
-    spot = Spot.create!(params.except(:photo, :categories).merge(country: country, user_id: user.id, city_id: city.data.id))
+    spot = Spot.create!(params.except(:photo, :categories).merge(user_id: user.id, city_id: city.data.id))
     puts "Generated spot #{spot.name.upcase}!"
     if params[:photo].present?
       puts "Uploading picture from #{params[:photo]}..."

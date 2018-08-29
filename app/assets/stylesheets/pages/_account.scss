@@ -1,0 +1,9 @@
+.Account__menu {
+  display: none;
+
+  @include media(map-get($grid-breakpoints, md)) {
+    display: block;
+    position: sticky;
+    top: 1rem;
+  }
+}

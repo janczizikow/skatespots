@@ -5,6 +5,7 @@ const autocomplete = (element, type = 'city') => {
     places({
       container: element,
       type: type,
+      aroundLatLngViaIP: false,
       templates: {
         value: function(suggestion) {
           return suggestion.name;

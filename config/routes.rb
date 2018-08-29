@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :spots do
     resources :spots_photos, only: %i[create destroy] #, as: :photos, path: :photos,
-    resources :reviews, only: %i[create destroy]
+    resources :reviews, only: %i[create update destroy]
     resources :favorites, only: %i[create destroy]
   end
 end
