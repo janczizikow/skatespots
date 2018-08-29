@@ -11,6 +11,26 @@
   padding: 0.5rem 1.5rem;
 }
 
+.nav-search-input {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  &:focus {
+    border-color: $border-color;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}
+
+.btn-search {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-left: 0;
+}
+
 .Navbar {
   border-bottom: 1px solid $border-color;
 }
@@ -36,12 +56,6 @@
 
 .navbar__toggle {
   border-color: transparent!important;
-}
-
-.btn-search {
-  background-color: $white;
-  border: 1px solid $border-color;
-  border-left: 0;
 }
 
 .navbar__form {

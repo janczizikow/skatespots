@@ -17,8 +17,8 @@ end
 ##################################################################
 
 user = nil
-if User.find_by(email: 'john.doe@gmail.com').present?
-  user = User.find_by(email: 'john.doe@gmail.com')
+if User.find_by(email: 'scrapper-bot@gmail.com').present?
+  user = User.find_by(email: 'scrapper-bot@gmail.com')
 else
   user = User.create!(email: 'scrapper-bot@gmail.com', password: "#{ENV['BOT_PASSWORD']}", remote_avatar_url: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/angry-bot-1-701002.png')
 end

@@ -11,8 +11,8 @@ header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Na
   #navbarToggle.collapse.navbar-collapse
     .navbar-nav.mr-auto
       = form_tag spots_path, method: :get, class: class_string("navbar__form mt-2 mt-md-0", "d-none": home?) do
-        .input-group
-          = text_field_tag :query, nil, placeholder: "Search...", class: "form-control js-nav-search"
+        .input-group.ap--input-group
+          = search_field_tag :query, nil, placeholder: "Search...", class: "form-control nav-search-input js-nav-search"
           .input-group-append
             = button_tag raw('<i class="fas fa-search"></i>'), class: "btn btn-outline-secondary btn-search"
 

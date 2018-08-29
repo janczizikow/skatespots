@@ -25,6 +25,5 @@ $(document).ready(function() {
       e.preventDefault();
       getLocation(input, e.currentTarget);
     });
-
   }
 });

@@ -13,3 +13,7 @@
     - else
       h3 No results
       p We couldn't find anything matching your search. Try searching other keywords.
+
+= content_for(:after_js) do
+  = javascript_pack_tag "map", defer: true
+  = javascript_pack_tag 'spots', defer: true

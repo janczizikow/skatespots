@@ -3,10 +3,10 @@
     h1 class="display-3 hero__title" Ready to shred?
     p class="hero__lead lead mb-0" Discover new spots around you
     = form_tag spots_path, method: :get, class: "hero__form" do
-      .input-group
-        = text_field_tag :query, \
+      .input-group.ap--input-group
+        = search_field_tag :query, \
           nil,
           placeholder: 'Try street spots in Berlin',
-          class: "form-control form-control-lg hero__input"
+          class: "form-control form-control-lg hero__input js-home-search"
         .input-group-append
           = submit_tag nil, class: "btn btn-primary btn-lg"

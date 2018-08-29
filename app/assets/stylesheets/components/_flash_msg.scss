@@ -11,4 +11,10 @@
     color: $white;
     text-align: center;
   }
+
+  &--success {
+    background-color: $teal;
+    color: $white;
+    text-align: center;
+  }
 }

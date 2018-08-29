@@ -1,0 +1,34 @@
+.ap--input-group {
+  flex-wrap: nowrap;
+}
+
+.ap-icon-pin {
+  display: none;
+}
+
+.ap-icon-clear {
+  display: none;
+}
+
+.ap-suggestion-icon {
+  display: none;
+}
+
+.ap-name {
+  color: $body-color;
+}
+
+.ap-suggestion.ap-cursor {
+  background-color: #f2f2f2;
+}
+
+.ap-footer {
+  color: #3a416f;
+}
+
+.ap-dropdown-menu {
+  padding-top: 8px;
+  margin-top: -1px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 15px 46px -10px rgba(26, 26, 29, 0.3) !important;
+}
