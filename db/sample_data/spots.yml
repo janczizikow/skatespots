@@ -1,81 +1,81 @@
 ---
-- https://myskatespots.com/listing/skatepark-schlachthof/
-- https://myskatespots.com/listing/linden-sud-skatepark/
-- https://myskatespots.com/listing/tiefenriede-spielpark-skatepark/
-- https://myskatespots.com/listing/hofgeismar-snakerun/
-- https://myskatespots.com/listing/mr-wilson-halle-kesselschmiede-kassel-skatepark/
-- https://myskatespots.com/listing/goslar-jugendcentrum-skatepark/
-- https://myskatespots.com/listing/gottingen-skatepark/
-- https://myskatespots.com/listing/trudering-skatepark/
-- https://myskatespots.com/listing/gefilde-skatepark/
-- https://myskatespots.com/listing/mv-bowl/
-- https://myskatespots.com/listing/skatepark-gaarden/
-- https://myskatespots.com/listing/skatepark-rote-flora/
-- https://myskatespots.com/listing/skatepark-olympiapark/
-- https://myskatespots.com/listing/ringpark-skatepark/
-- https://myskatespots.com/listing/national-galerie-skatespot/
-- https://myskatespots.com/listing/krausenstrasse-skatepark/
-- https://myskatespots.com/listing/tilla-durieux-skatespot/
-- https://myskatespots.com/listing/sony-center-3-stair/
-- https://myskatespots.com/listing/kulturforum-skatespot/
-- https://myskatespots.com/listing/philharmonie-skatespot/
-- https://myskatespots.com/listing/polendenkmal-skatespot/
-- https://myskatespots.com/listing/skatepark-t-park/
-- https://myskatespots.com/listing/skatepark-adlershof-a-park/
-- https://myskatespots.com/listing/sandstone-spot-10-stair/
-- https://myskatespots.com/listing/i-punkt-skateland/
-- https://myskatespots.com/listing/skatepark-karlsruhe/
-- https://myskatespots.com/listing/skatepark-reithalle-ulm/
-- https://myskatespots.com/listing/skatepark-weil-am-rhein/
-- https://myskatespots.com/listing/freestyle-academy-stuttgart/
-- https://myskatespots.com/listing/skatepark-ravensburg/
-- https://myskatespots.com/listing/mellowpark-berlin/
-- https://myskatespots.com/listing/fruchtallee-bowl/
-- https://myskatespots.com/listing/berlin-skatehalle/
-- https://myskatespots.com/listing/monchgut-skatepark/
-- https://myskatespots.com/listing/wacker-skatepark/
-- https://myskatespots.com/listing/skatepark-dingolfing/
-- https://myskatespots.com/listing/skatepark-merzig/
-- https://myskatespots.com/listing/neuried-skatepark/
-- https://myskatespots.com/listing/gravitylab-munich/
-- https://myskatespots.com/listing/keyhole-skatepark/
-- https://myskatespots.com/listing/dachau-skatepark/
-- https://myskatespots.com/listing/kopenicker-diy/
-- https://myskatespots.com/listing/oschatz-bowl/
-- https://myskatespots.com/listing/lankow-bowl/
-- https://myskatespots.com/listing/conne-island-skatepark/
-- https://myskatespots.com/listing/stuttgart-bowl/
-- https://myskatespots.com/listing/berlin-snakerun/
-- https://myskatespots.com/listing/konkordia-skatepark/
-- https://myskatespots.com/listing/amiberg-skatepark/
-- https://myskatespots.com/listing/heidelberger-platz-bridge-park/
-- https://myskatespots.com/listing/schlachthof-skatepark/
-- https://myskatespots.com/listing/stahnsdorf-skatepark/
-- https://myskatespots.com/listing/skatepark-gleisdreieck/
-- https://myskatespots.com/listing/kanalstrase-skatepark/
-- https://myskatespots.com/listing/ratekau-skatepark/
-- https://myskatespots.com/listing/fehmarn-miniramp/
-- https://myskatespots.com/listing/reutlingen-skatepark/
-- https://myskatespots.com/listing/hirschgarten-skatepark/
-- https://myskatespots.com/listing/marianna-skatepark/
-- https://myskatespots.com/listing/bonassodromo-ramp/
-- https://myskatespots.com/listing/skatepark-seregno/
-- https://myskatespots.com/listing/milan-central-station-street/
-- https://myskatespots.com/listing/skatepark-corsico/
-- https://myskatespots.com/listing/skatepark-area-motta/
-- https://myskatespots.com/listing/skatepark-cormano/
-- https://myskatespots.com/listing/skatepark-lampugnano/
-- https://myskatespots.com/listing/bastard-bowl/
-- https://myskatespots.com/listing/trinity-skatepark/
-- https://myskatespots.com/listing/grato-bowl/
-- https://myskatespots.com/listing/parco-lambro-skatepark/
-- https://myskatespots.com/listing/pisa-bowl/
-- https://myskatespots.com/listing/levanto-miniramp/
-- https://myskatespots.com/listing/levanto-skatespot/
-- https://myskatespots.com/listing/elbo-skatepark/
-- https://myskatespots.com/listing/platzetta-skatepark-bolzano/
-- https://myskatespots.com/listing/bolzano-platza/
-- https://myskatespots.com/listing/pergine-skatepark/
+# - https://myskatespots.com/listing/skatepark-schlachthof/
+# - https://myskatespots.com/listing/linden-sud-skatepark/
+# - https://myskatespots.com/listing/tiefenriede-spielpark-skatepark/
+# - https://myskatespots.com/listing/hofgeismar-snakerun/
+# - https://myskatespots.com/listing/mr-wilson-halle-kesselschmiede-kassel-skatepark/
+# - https://myskatespots.com/listing/goslar-jugendcentrum-skatepark/
+# - https://myskatespots.com/listing/gottingen-skatepark/
+# - https://myskatespots.com/listing/trudering-skatepark/
+# - https://myskatespots.com/listing/gefilde-skatepark/
+# - https://myskatespots.com/listing/mv-bowl/
+# - https://myskatespots.com/listing/skatepark-gaarden/
+# - https://myskatespots.com/listing/skatepark-rote-flora/
+# - https://myskatespots.com/listing/skatepark-olympiapark/
+# - https://myskatespots.com/listing/ringpark-skatepark/
+# - https://myskatespots.com/listing/national-galerie-skatespot/
+# - https://myskatespots.com/listing/krausenstrasse-skatepark/
+# - https://myskatespots.com/listing/tilla-durieux-skatespot/
+# - https://myskatespots.com/listing/sony-center-3-stair/
+# - https://myskatespots.com/listing/kulturforum-skatespot/
+# - https://myskatespots.com/listing/philharmonie-skatespot/
+# - https://myskatespots.com/listing/polendenkmal-skatespot/
+# - https://myskatespots.com/listing/skatepark-t-park/
+# - https://myskatespots.com/listing/skatepark-adlershof-a-park/
+# - https://myskatespots.com/listing/sandstone-spot-10-stair/
+# - https://myskatespots.com/listing/i-punkt-skateland/
+# - https://myskatespots.com/listing/skatepark-karlsruhe/
+# - https://myskatespots.com/listing/skatepark-reithalle-ulm/
+# - https://myskatespots.com/listing/skatepark-weil-am-rhein/
+# - https://myskatespots.com/listing/freestyle-academy-stuttgart/
+# - https://myskatespots.com/listing/skatepark-ravensburg/
+# - https://myskatespots.com/listing/mellowpark-berlin/
+# - https://myskatespots.com/listing/fruchtallee-bowl/
+# - https://myskatespots.com/listing/berlin-skatehalle/
+# - https://myskatespots.com/listing/monchgut-skatepark/
+# - https://myskatespots.com/listing/wacker-skatepark/
+# - https://myskatespots.com/listing/skatepark-dingolfing/
+# - https://myskatespots.com/listing/skatepark-merzig/
+# - https://myskatespots.com/listing/neuried-skatepark/
+# - https://myskatespots.com/listing/gravitylab-munich/
+# - https://myskatespots.com/listing/keyhole-skatepark/
+# - https://myskatespots.com/listing/dachau-skatepark/
+# - https://myskatespots.com/listing/kopenicker-diy/
+# - https://myskatespots.com/listing/oschatz-bowl/
+# - https://myskatespots.com/listing/lankow-bowl/
+# - https://myskatespots.com/listing/conne-island-skatepark/
+# - https://myskatespots.com/listing/stuttgart-bowl/
+# - https://myskatespots.com/listing/berlin-snakerun/
+# - https://myskatespots.com/listing/konkordia-skatepark/
+# - https://myskatespots.com/listing/amiberg-skatepark/
+# - https://myskatespots.com/listing/heidelberger-platz-bridge-park/
+# - https://myskatespots.com/listing/schlachthof-skatepark/
+# - https://myskatespots.com/listing/stahnsdorf-skatepark/
+# - https://myskatespots.com/listing/skatepark-gleisdreieck/
+# - https://myskatespots.com/listing/kanalstrase-skatepark/
+# - https://myskatespots.com/listing/ratekau-skatepark/
+# - https://myskatespots.com/listing/fehmarn-miniramp/
+# - https://myskatespots.com/listing/reutlingen-skatepark/
+# - https://myskatespots.com/listing/hirschgarten-skatepark/
+# - https://myskatespots.com/listing/marianna-skatepark/
+# - https://myskatespots.com/listing/bonassodromo-ramp/
+# - https://myskatespots.com/listing/skatepark-seregno/
+# - https://myskatespots.com/listing/milan-central-station-street/
+# - https://myskatespots.com/listing/skatepark-corsico/
+# - https://myskatespots.com/listing/skatepark-area-motta/
+# - https://myskatespots.com/listing/skatepark-cormano/
+# - https://myskatespots.com/listing/skatepark-lampugnano/
+# - https://myskatespots.com/listing/bastard-bowl/
+# - https://myskatespots.com/listing/trinity-skatepark/
+# - https://myskatespots.com/listing/grato-bowl/
+# - https://myskatespots.com/listing/parco-lambro-skatepark/
+# - https://myskatespots.com/listing/pisa-bowl/
+# - https://myskatespots.com/listing/levanto-miniramp/
+# - https://myskatespots.com/listing/levanto-skatespot/
+# - https://myskatespots.com/listing/elbo-skatepark/
+# - https://myskatespots.com/listing/platzetta-skatepark-bolzano/
+# - https://myskatespots.com/listing/bolzano-platza/
+# - https://myskatespots.com/listing/pergine-skatepark/
 - https://myskatespots.com/listing/centro-sportivo-c…-venice-italy-array-skatepark-sportivo-cavallino/
 - https://myskatespots.com/listing/skatepark-colombare/
 - https://myskatespots.com/listing/gorizia-street-plaza/
@@ -265,3 +265,33 @@
 - https://myskatespots.com/listing/horsholm-skatepark/
 - https://myskatespots.com/listing/darup-skatepark/
 - https://myskatespots.com/listing/rabalder-parken/
+- https://myskatespots.com/listing/greenfield-middle-school/
+- https://myskatespots.com/listing/church-of-skatan/
+- https://myskatespots.com/listing/linda-vista-skate-park/
+- https://myskatespots.com/listing/all-together-skatepark/
+- https://myskatespots.com/listing/frankenstein/
+- https://myskatespots.com/listing/rhodes-skate-park/
+- https://myskatespots.com/listing/jamail-skatepark/
+- https://myskatespots.com/listing/skatepark-of-tampa/
+- https://myskatespots.com/listing/skatelab/
+- https://myskatespots.com/listing/epworth-skatepark/
+- https://myskatespots.com/listing/goat-bowl/
+- https://myskatespots.com/listing/pipe-dreams-skate-park/
+- https://myskatespots.com/listing/west-roosevelt-skatepark/
+- https://myskatespots.com/listing/downey-605-ditch/
+- https://myskatespots.com/listing/board-slide-hill/
+- https://myskatespots.com/listing/jokers-skate-shop/
+- https://myskatespots.com/listing/mcgills-skateshop/
+- https://myskatespots.com/listing/socal-skate-shop/
+- https://myskatespots.com/listing/rip-city-skate-shop/
+- https://myskatespots.com/listing/vans-combi-pool/
+- https://myskatespots.com/listing/the-cove-skatepark/
+- https://myskatespots.com/listing/carmel-valley-skatepark/
+- https://myskatespots.com/listing/mission-valley-ymca-skatepark/
+- https://myskatespots.com/listing/encinitas-ymca-skatepark/
+- https://myskatespots.com/listing/costa-mesa-volcom-skatepark/
+- https://myskatespots.com/listing/alex-road-skatepark/
+- https://myskatespots.com/listing/etnies-skatepark-lake-forest/
+- https://myskatespots.com/listing/vans-huntington-beach-skatepark/
+- https://myskatespots.com/listing/venice-beach-skatepark/
+- https://myskatespots.com/listing/potrero-skatepark/

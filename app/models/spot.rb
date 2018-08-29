@@ -13,7 +13,7 @@ class Spot < ApplicationRecord
   # has_many :photos,
            # class_name: 'SpotsPhoto', foreign_key: 'spot_id',
            # dependent: :restrict_with_exception
-  has_many :reviews, dependent: :restrict_with_exception
+  has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
   accepts_nested_attributes_for :spots_photos, reject_if: proc { |attributes| attributes[:photo].blank? }
