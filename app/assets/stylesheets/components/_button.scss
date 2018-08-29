@@ -34,6 +34,13 @@
   }
 }
 
+.btn.btn-light {
+  background-color: $white;
+
+  &:hover {
+    background-color: $light;
+  }
+}
 
 @keyframes loader {
   0% {

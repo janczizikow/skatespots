@@ -12,6 +12,8 @@ import throttle from 'lodash.throttle';
         console.log('styled map');
         mapElement.style.height = `${window.innerHeight - 144}px`;
       }
+      // mapElement.parentNode.style.backgroundColor = '#fff';
+      // mapElement.children[0].style.backgroundColor = '#fff';
       window.addEventListener('resize', throttle(styleMap, 800));
       styleMap();
     }
