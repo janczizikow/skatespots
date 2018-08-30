@@ -44,6 +44,8 @@ gem 'draper'
 
 gem 'nokogiri'
 
+gem 'sendgrid-ruby'
+
 # Frontend gems
 gem 'autoprefixer-rails'
 gem 'carrierwave', '~> 1.2'
@@ -72,6 +74,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'scss_lint', require: false
   gem 'rails_real_favicon'
+  gem 'letter_opener'
 end
 
 group :test do

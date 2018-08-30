@@ -15,9 +15,4 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :restrict_with_exception
 
   validates :username, uniqueness: {case_sensitive: false}
-
-  # after_create :send_welcome_email
-  # def send_welcome_email
-  #   UserMailer.welcome(self).deliver_now
-  # end
 end

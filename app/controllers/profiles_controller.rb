@@ -4,19 +4,18 @@ class ProfilesController < ApplicationController
   before_action :set_user
 
   def update
-    if @user.update(avatar: profile_params[:avatar], username: profile_params[:username], name: profile_params[:name])
-      respond_to do |format|
-        format.html { redirect_to account_path }
-      end
+    # FIXME: HANDLE CITY UPDATE
+    if @user.update(
+      avatar: profile_params[:avatar],
+      username: profile_params[:username],
+      name: profile_params[:name]
+    )
+      flash[:notice] = 'Profile updated!'
+      redirect_to account_path
     else
-      respond_to do |format|
-        format.html { render 'pages#account' }
-      end
+      flash[:alert] = @user.errors.full_messages
+      render 'pages#account'
     end
-  end
-
-  def destroy
-    # TODO: SET INACTIVE FLAG
   end
 
   private
