@@ -22,7 +22,7 @@ header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Na
           li.nav-item
             = link_to "Add a spot", new_spot_path, class: "nav-link"
           li.nav-item
-            = link_to "Messages", "#", class: "nav-link"
+            = link_to "Explore", spots_path, class: "nav-link"
           li.nav-item
             = link_to "Favorites", favorites_path, class: "nav-link"
           li.nav-item.dropdown
@@ -39,6 +39,8 @@ header class= class_string("navbar navbar-expand-md js-nav", ["navbar-dark", "Na
       - else
         li.nav-item
             = link_to "Add a spot", new_spot_path, class: "nav-link"
+        li.nav-item
+            = link_to "Explore", spots_path, class: "nav-link"
         li.nav-item
           = link_to "Sign in", new_user_session_path, class: "nav-link"
         li.nav-item

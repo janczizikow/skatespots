@@ -1,8 +1,13 @@
 footer.footer
   .container
-    .d-flex
-      p &copy; Skatespots #{Time.zone.now.year}
-      | &nbsp; &middot; &nbsp;
-      = link_to "Privacy", "#"
-      | &nbsp; &middot; &nbsp;
-      = link_to "Terms", "#"
+    .div
+      p.pull-left &copy; Skatespots #{Time.zone.now.year}
+      .text-center
+        p
+          | Made with ❤️by
+          | &nbsp;
+          a href="https://www.janczizikow.com/?ref=skatespots" target="_blank" rel="noopener" class="styled--link" Jan Czizikow
+      / | &nbsp; &middot; &nbsp;
+      / = link_to "Privacy", "#"
+      / | &nbsp; &middot; &nbsp;
+      / = link_to "Terms", "#"

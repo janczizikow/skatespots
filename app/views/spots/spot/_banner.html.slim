@@ -8,7 +8,8 @@
       - else
         = link_to nil, "#{spot.photo}", class: "d-none", data: { fancybox: "photo-#{@spot.id}" }
   .Banner__buttons--social
-    = link_to "Share", "#", class: "btn btn-light"
+    / FIXME: ADD SHARING FUNCTIONALITY
+    / = link_to "Share", "#", class: "btn btn-light"
     - if user_signed_in? && in_favorites(spot).present?
       = render "favorites/destroy", spot: spot, favorite: in_favorites(spot)
     - else
