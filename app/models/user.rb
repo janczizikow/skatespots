@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :spots, dependent: :restrict_with_exception
   has_many :spots_photos, dependent: :restrict_with_exception
   has_many :favorites, dependent: :restrict_with_exception
+  has_many :reviews, dependent: :destroy
 
   validates :username, uniqueness: {case_sensitive: false}
 end

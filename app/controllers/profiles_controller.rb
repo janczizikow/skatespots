@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def update
     # FIXME: HANDLE CITY UPDATE
+    update_city if @user.city != profile_params[:city] && profile_params[:city].present?
     if @user.update(
       avatar: profile_params[:avatar],
       username: profile_params[:username],
@@ -14,7 +15,7 @@ class ProfilesController < ApplicationController
       redirect_to account_path
     else
       flash[:alert] = @user.errors.full_messages
-      render 'pages#account'
+      render 'pages/account'
     end
   end
 
@@ -23,6 +24,15 @@ class ProfilesController < ApplicationController
   def set_user
     @user = current_user
     authorize @user
+  end
+
+  def update_city
+    city_result = CreateCity.new(city: profile_params[:city]).call
+    if city_result.success?
+      @user.city = city_result.data
+    else
+      render 'pages/account', error: city_result.error
+    end
   end
 
   def profile_params
