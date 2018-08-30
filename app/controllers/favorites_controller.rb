@@ -45,7 +45,7 @@ class FavoritesController < ApplicationController
   private
 
   def set_spot
-    @spot = Spot.find(params[:spot_id])
+    @spot = Spot.friendly.find(params[:spot_id])
   end
 
   def favorite_params

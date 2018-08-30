@@ -14,6 +14,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    return redirect_to @spot, status: :moved_permanently if request.path != spot_path(@spot)
     @spots_photo = SpotsPhoto.new
     @spots_nearby = if @spot.geocoded?
                       @spot.nearbys(10).limit(6)
@@ -89,7 +90,7 @@ class SpotsController < ApplicationController
   private
 
   def set_spot
-    @spot = Spot.find(params[:id])
+    @spot = Spot.friendly.find(params[:id])
     authorize @spot
   end
 

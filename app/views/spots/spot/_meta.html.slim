@@ -17,7 +17,10 @@
           i class="fas fa-sm fa-tag text-teal"
           =link_to "#{category}", spots_path(category: category), class: "Spot__category--link span ml-1"
   div.text-center data-toggle="tooltip" data-placement="top" title="Listing Author"
-    img src=(user_photo) class="Avatar--lg img-fluid rounded-circle mb-1"
+    - if user_photo.present?
+      img src=(user_photo) class="Avatar--lg img-fluid rounded-circle mb-1"
+    - else
+      i class="fas fa-lg fa-user-circle mb-1"
     p = user.username
 
-p = spot.description
+p.Spot__desc = spot.description

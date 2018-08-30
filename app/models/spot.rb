@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 class Spot < ApplicationRecord
+  extend FriendlyId
+
   include PgSearch
   include Geocode
+
+  friendly_id :name, use: :slugged
 
   belongs_to :city
   belongs_to :user
@@ -19,9 +23,8 @@ class Spot < ApplicationRecord
   accepts_nested_attributes_for :spots_photos, reject_if: proc { |attributes| attributes[:photo].blank? }
   accepts_nested_attributes_for :spots_categories, reject_if: proc { |attributes| attributes[:category_id].blank? }
 
-  validates :city, presence: true
-  validates :name, presence: true, uniqueness: {case_sensitvie: false}
-  validates :address, presence: true
+  validates :city, :name, :slug, :address, presence: true
+  validates :name, uniqueness: {case_sensitvie: false}
 
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
@@ -42,4 +45,8 @@ class Spot < ApplicationRecord
                   }, using: {
                     tsearch: {prefix: true}
                   }
+
+  def should_generate_new_friendly_id?
+    new_record? || slug.nil?
+  end
 end

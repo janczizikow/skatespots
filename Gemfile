@@ -41,6 +41,7 @@ gem 'geocoder'
 
 # Decorator
 gem 'draper'
+gem 'friendly_id', '~> 5.2.0'
 
 gem 'nokogiri'
 

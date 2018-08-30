@@ -30,7 +30,7 @@ class SpotsPhotosController < ApplicationController
   private
 
   def set_spot
-    @spot = Spot.find(params[:spot_id])
+    @spot = Spot.friendly.find(params[:spot_id])
   end
 
   def spots_photo_params

@@ -7,7 +7,7 @@
     h4 No reviews (yet)
     p This spot doesn't have any reviews. If you visited it, why not add one?
 - reviews.each do |r|
-  = render "reviews/review", review: r
+  = render "reviews/review", review: r, user: r.user
 - if user_signed_in?
   = render "reviews/new", spot: spot, review: review
 - else
