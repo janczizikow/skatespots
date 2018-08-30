@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
   include DeviseWhitelist
+  include DefaultUrl
 
   before_action :authenticate_user!
   after_action :verify_authorized, except: :index, unless: :skip_pundit?

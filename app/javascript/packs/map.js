@@ -1,6 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
-// import throttle from 'lodash.throttle';
+import mapStyle from '../components/mapStyle';
 import '../components/throttle';
+
 {
   const mapElement = document.getElementById('map');
 
@@ -24,6 +25,11 @@ import '../components/throttle';
 
     const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
     const markers = JSON.parse(mapElement.dataset.markers);
+    map.addStyle({
+      styles: mapStyle,
+      mapTypeId: 'map_style'
+    });
+    map.setStyle('map_style');
     map.addMarkers(markers);
 
     if (markers.length === 0) {

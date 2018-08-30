@@ -4,14 +4,15 @@ html
     meta http-equiv="Content-Type" content="text/html;charset=UTF-8"
     meta http-equiv="X-UA-Compatible" content="ie=edge"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title Skatespots
+    = render 'shared/meta_tags'
     = csrf_meta_tags
     = csp_meta_tag
+
     = render 'application/favicon'
 
     = stylesheet_link_tag 'application', media: 'all'
-    /= stylesheet_pack_tag 'application', media: 'all' # Uncomment if you import CSS in app/javascript/packs/application.js
     = stylesheet_pack_tag 'spot', media: 'all'
+
     / Polyfills must load sync, since they need to be active before other script runs
     script src="https://cdn.polyfill.io/v2/polyfill.min.js"
   body class="Site"

@@ -35,9 +35,17 @@
   border-bottom: 1px solid $border-color;
 }
 
-.scrolled {
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+.nav-dropdown {
+  padding: 0!important;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
 }
+
+// .scrolled {
+//   box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+// }
 
 .navbar__logo {
   color: $primary!important;
