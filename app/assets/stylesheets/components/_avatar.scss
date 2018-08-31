@@ -1,15 +1,15 @@
 .Avatar {
   width: 40px;
-  height: 40px;
+  height: auto;
   border-radius: 50%;
 
   &--md {
     width: 48px;
-    height: 48px;
+    height: auto;
   }
 
   &--lg {
     width: 56px;
-    height: 56px;
+    height: auto;
   }
 }
