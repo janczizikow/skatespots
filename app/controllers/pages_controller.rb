@@ -7,7 +7,9 @@ class PagesController < ApplicationController
     @spots = Spot.active.limit(12).order('created_at DESC')
   end
 
-  def account; end
+  def account
+    @user = current_user
+  end
 
   def spots
     @spots = Spot.user_spots(current_user)

@@ -3,7 +3,7 @@
   = f.input :avatar
   = f.input :name
   = f.input :username
-  = f.input :city, :input_html => { :value => user.city.name }
+  = f.input :city, :input_html => { value: user.city.present? ? user.city.name : nil }
   = f.input :description
   / = f.input :photo_cache, as: :hidden
   = f.submit 'Save', class: "btn btn btn-primary"
