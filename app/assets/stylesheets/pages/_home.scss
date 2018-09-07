@@ -18,6 +18,12 @@
     font-size: 16px;
     color: $body-color;
   }
+
+  &__icon {
+    margin-bottom: 24px;
+    font-size: 32px;
+    color: $primary;
+  }
 }
 
 .Home__CTA {

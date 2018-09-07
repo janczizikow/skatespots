@@ -18,10 +18,14 @@
   }
 
   &__title {
-    // font-size: 3.2rem;
+    font-size: 3.2rem;
     color: $white;
     font-weight: 700;
     text-shadow: 1px 1px 40px rgba(22, 23, 31, 0.4) !important;
+
+    @include media(map-get($grid-breakpoints, md)) {
+      font-size: 4.5rem;
+    }
   }
 
   &__lead {
