@@ -56,6 +56,7 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'font-awesome-sass', '~> 5.2'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'pagy', '~> 0.19.0'
 
 group :development, :test do
   gem 'pry-rails'

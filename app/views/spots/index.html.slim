@@ -13,6 +13,8 @@
     - else
       h3 No results
       p We couldn't find anything matching your search. Try searching other keywords.
+    - if @pagy.pages > 1
+      == pagy_nav_bootstrap(@pagy)
 
 = content_for(:after_js) do
   = javascript_pack_tag "map", defer: true

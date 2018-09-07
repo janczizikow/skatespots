@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 module SpotsHelper
+  include Pagy::Frontend
   def spots?
     @spots.present?
   end
 
   def num_of_spots
-    @spots.length > 1 ? "#{@spots.length} Spots" : "#{@spots.length} Spot"
+    @pagy.count > 1 ? "#{@pagy.count} Spots" : "#{@pagy.count} Spot"
   end
 
   def city
