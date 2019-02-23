@@ -3,16 +3,12 @@
 class SpotPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.active
     end
   end
 
-  def index?
-    true
-  end
-
   def show?
-    index?
+    true
   end
 
   def new?

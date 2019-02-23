@@ -6,8 +6,8 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: %i[show edit update destroy]
 
   def index
-    @pagy, @spots = pagy policy_scope(Spot.active.where(nil))
-    @pagy, @spots = pagy policy_scope(Spot.active.near(params[:query])) if params[:query].present?
+    @pagy, @spots = pagy policy_scope(Spot.where(nil))
+    @pagy, @spots = pagy policy_scope(Spot.near(params[:query])) if params[:query].present?
     # Geocoder > DB
     # @spots = policy_scope(Spot.active).global_location_search(params[:query]) if params[:query].present?
     @pagy, @spots = pagy policy_scope(Spot.active).category_search(params[:category]) if params[:category].present?
